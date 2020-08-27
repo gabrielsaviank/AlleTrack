@@ -1,4 +1,5 @@
 // Libraries
+require('./models/User');
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('../src/routes/authRoutes');
