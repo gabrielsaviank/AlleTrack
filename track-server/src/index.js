@@ -2,9 +2,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('../src/routes/authRoutes');
+const bodyParser = require('body-parser');
 
 const app = express(); 
 
+app.use(bodyParser.json())
 app.use(authRoutes);
 
 //Mongo Setup 
