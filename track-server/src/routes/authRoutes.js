@@ -8,10 +8,10 @@ router.post('/signup', async(req, res)=> {
     const {email, password} = req.body;
 
     try {
-`        const user = new User({email, password});
+       const user = new User({email, password});
         await user.save();
 
-        res.send('You made a post request');`
+        res.send('You made a post request');
     } catch (err){
         return res.status(422).send(err.message)
     }

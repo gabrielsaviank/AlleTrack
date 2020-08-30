@@ -11,7 +11,8 @@ app.use(bodyParser.json())
 app.use(authRoutes);
 
 //Mongo Setup 
-const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.5q8ln.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority'
+const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.vx10q.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority'
+
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useCreateIndex: true,
