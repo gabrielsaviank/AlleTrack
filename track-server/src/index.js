@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('../src/routes/authRoutes');
 const bodyParser = require('body-parser');
+const requireAuth = require('./middlewares/requireAuth');
 
 const app = express(); 
 
@@ -11,7 +12,8 @@ app.use(bodyParser.json())
 app.use(authRoutes);
 
 //Mongo Setup 
-const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.5q8ln.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority'
+const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.vx10q.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority'
+
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -25,8 +27,8 @@ mongoose.connection.on('error', (err)=>{
 });
 
 // Req and Res
-app.get('/', (req, res) => {
-    res.send('Hi there')
+app.get('/', requireAuth, (req, res) => {
+    res.send(`Your email: ${req.user.email}`);
 }); 
 // Port
 app.listen(3000, ()=>{
