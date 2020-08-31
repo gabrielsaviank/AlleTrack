@@ -1,15 +1,18 @@
 // Libraries
 require('./models/User');
+require('./models/Track');
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('../src/routes/authRoutes');
 const bodyParser = require('body-parser');
+const trackRoutes = require('./routes/trackRoutes');
 const requireAuth = require('./middlewares/requireAuth');
 
 const app = express(); 
 
 app.use(bodyParser.json())
 app.use(authRoutes);
+app.use(trackRoutes);
 
 //Mongo Setup 
 const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.vx10q.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority'
