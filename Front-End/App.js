@@ -23,5 +23,5 @@ const switchNavigator = createSwitchNavigator({
     Account: AccountScreen,
   }),
 });
-
+console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
 export default createAppContainer(switchNavigator);
