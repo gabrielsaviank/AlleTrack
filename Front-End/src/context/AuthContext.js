@@ -7,7 +7,7 @@ const authReducer = (state, action) => {
             return { ...state, errorMessage: action.payload }
         default: 
             return state;
-    }
+    };
 };
 
 //SignUp
