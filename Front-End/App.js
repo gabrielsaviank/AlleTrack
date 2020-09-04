@@ -8,6 +8,7 @@ import SignupScreen from './src/screens/SignupScreen';
 import TrackCreateScreen from './src/screens/TrackCreateScreen';
 import TrackDetailScreen from './src/screens/TrackDetailScreen';
 import TrackListScreen from './src/screens/TrackListScreen';
+import {Provider as AuthProvider} from './src/context/AuthContext';
 
 const switchNavigator = createSwitchNavigator({
   loginFlow: createStackNavigator({
@@ -23,5 +24,13 @@ const switchNavigator = createSwitchNavigator({
     Account: AccountScreen,
   }),
 });
+console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
+const App = createAppContainer(switchNavigator);
 
-export default createAppContainer(switchNavigator);
+export default() => {
+  return(
+    <AuthProvider>
+      <App/>
+    </AuthProvider>
+  );
+};
