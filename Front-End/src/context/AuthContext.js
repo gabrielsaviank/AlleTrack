@@ -1,6 +1,8 @@
+//Imports
 import createDataContext from './createDataContext';
 import trackerApi from '../api/tracker';
 
+// Reducers
 const authReducer = (state, action) => {
     switch(action.type) {
         case 'add_error':
