@@ -1,49 +1,40 @@
-import React, {useContext} from 'react';
-import { View, StyleSheet, Alert, TouchableOpacity } from 'react-native';
-import {Text} from 'react-native-elements'
-import Spacer from '../components/Spacer';
-import {Context as AuthContext} from '../context/AuthContext';
-import AuthForm from '../components/AuthForm'
+import React, { useContext } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { Context as AuthContext } from '../context/AuthContext';
+import AuthForm from '../components/AuthForm';
+import NavLink from '../components/NavLink';
 
+const SignupScreen = ({ navigation }) => {
+  const { state, signup } = useContext(AuthContext);
 
-const SignupScreen = ({navigation}) => {
-  const {state, signup} = useContext(AuthContext);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  console.log(state);
-
-  return(
+  return (
     <View style={styles.container}>
       <AuthForm
         headerText="Sign Up for Tracker"
         errorMessage={state.errorMessage}
         submitButtonText="Sign Up"
-        onSubmit={({email, password }) => signup({email, password})}
+        onSubmit={signup}
       />
-      <TouchableOpacity onPress={() => navigation.navigate('Signin')}>
-        <Spacer></Spacer>
-        <Text style={styles.link}>Already have an account? Sign in instead</Text>
-      </TouchableOpacity>
+      <NavLink
+        routeName="Signin"
+        text="Already have an account? Sign in instead!"
+      />
     </View>
-  )
+  );
 };
 
 SignupScreen.navigationOptions = () => {
   return {
-    header: false
+    header: () => false,
   };
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    marginBottom: 250
+    justifyContent: 'center',
+    marginBottom: 250,
   },
-  link:{
-    color: 'blue'
-  }
 });
 
 export default SignupScreen;
