@@ -11,7 +11,7 @@ Later we'll add the Tracks Application
 _Navigate to the Directory and use the command npm run dev on the terminal_
 
 * Second Step 
-_Navigate to where you extracted the Ngrok File and use the command ngrok http: <the port that you selected on the backend> in this case I used the 3000_
+_Navigate to where you extracted the Ngrok File and use the command ./ngrok http: <the port that you selected on the backend> in this case I used the 3000 always have to change the axiox base URL_ 
 
 * Third Step 
 _Copy the forwarding port name that ngrok provided to you_
@@ -20,4 +20,5 @@ _Copy the forwarding port name that ngrok provided to you_
 _Paste the name provider into your API file in YOUR FRONT END_
 
 * Fifth Step 
-_Run the emulator_
+_Run the emulator_ 
+
