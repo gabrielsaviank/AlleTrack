@@ -1,9 +1,11 @@
+// Imports and Libraries
 import React, { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Context as AuthContext } from '../context/AuthContext';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
 
+// Core
 const SignupScreen = ({ navigation }) => {
   const { state, signup } = useContext(AuthContext);
 
@@ -23,12 +25,14 @@ const SignupScreen = ({ navigation }) => {
   );
 };
 
+// Deactivate Header
 SignupScreen.navigationOptions = () => {
   return {
     header: () => false,
   };
 };
 
+// Styling CSS
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -37,4 +41,5 @@ const styles = StyleSheet.create({
   },
 });
 
+// Export
 export default SignupScreen;
