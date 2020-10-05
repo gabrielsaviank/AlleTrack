@@ -1,0 +1,19 @@
+{
+  "name": "track-app",
+  "version": "1.0.0",
+  "description": "This is an Authenticantion Api at the first moment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielsaviank/Track-App.git"
+  },
+  "author": "Gabriel Savian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielsaviank/Track-App/issues"
+  },
+  "homepage": "https://github.com/gabrielsaviank/Track-App#readme"
+}
