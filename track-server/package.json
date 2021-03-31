@@ -1,13 +1,12 @@
 {
   "name": "track-server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "gabriel savian",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -16,5 +15,7 @@
     "mongoose": "^5.10.1",
     "ngrok": "^3.2.7",
     "nodemon": "^2.0.4"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
