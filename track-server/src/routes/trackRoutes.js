@@ -1,5 +1,8 @@
+//Libs
 const express = require('express');
 const mongoose = require('mongoose');
+
+// Application Imports
 const requireAuth = require('../middlewares/requireAuth');
 
 // This allows us to create multiple tracks
@@ -19,6 +22,7 @@ router.get('/tracks', async (req, res) => {
 
 });
 
+//Posting Tracks
 router.post('/tracks', async (req, res) => {
     const {name, locations} = req.body;
     if (!name || !locations){

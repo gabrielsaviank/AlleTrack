@@ -1,3 +1,4 @@
+// Our Imports
 import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -11,6 +12,7 @@ import TrackListScreen from './src/screens/TrackListScreen';
 import {Provider as AuthProvider} from './src/context/AuthContext';
 import {setNavigator} from './src/navigationRef';
 
+// Our Navigation
 const switchNavigator = createSwitchNavigator({
   loginFlow: createStackNavigator({
     Signup: SignupScreen,
@@ -26,9 +28,11 @@ const switchNavigator = createSwitchNavigator({
   }),
 });
 
+// Ignore yellow box (NOT WORKING)
 console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
 const App = createAppContainer(switchNavigator);
 
+//Exporting with Authentication
 export default() => {
   return(
     <AuthProvider>
