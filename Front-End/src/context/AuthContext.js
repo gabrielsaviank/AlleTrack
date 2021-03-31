@@ -4,16 +4,29 @@ import trackerApi from '../api/tracker';
 import { navigate } from '../navigationRef';
 
 const authReducer = (state, action) => {
-  // REDUCERS
+  // REDUCER
   switch (action.type) {
     case 'add_error':
       return { ...state, errorMessage: action.payload };
     case 'signin':
       return {errorMessage: '', token: action.payload}
+    case 'clear_error_message':
+      return {...state, errorMessage: ''};
     default:
       return state;
   }
 };
+
+//Clearing error messages(new syntax)
+const clearErrorMessage = (dispatch) => () => {
+  dispatch({
+    type: 'clear_error_message',
+  });
+};
+
+// const clearErrorMessage = (dispatch) => {
+//   dispatch({typ: 'clear_error_message'});
+// };
 
 // Signup
 const signup = dispatch => async ({ email, password }) => {
@@ -57,6 +70,6 @@ const signout = dispatch => {
 
 export const { Provider, Context } = createDataContext(
   authReducer,
-  { signin, signout, signup },
+  { signin, signout, signup, clearErrorMessage},
   { token: null, errorMessage: '' }
 );
