@@ -12,9 +12,9 @@ export const setNavigator = (nav) => {
 //Exporting navigator with actions 
 export const navigate = (routeName, params) => {
     navigator.dispatch(
-     NavigationActions.navigate({
-         routeName: routeName,
-         params
-        })   
+        NavigationActions.navigate({
+            routeName: routeName,
+            params
+        })
     );
 };

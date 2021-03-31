@@ -5,28 +5,31 @@ import {NavigationEvents} from 'react-navigation';
 import { Context as AuthContext } from '../context/AuthContext';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
+import { SafeAreaView } from 'react-navigation';
 
 // Core
 const SignupScreen = ({ navigation }) => {
   const { state, signup, clearErrorMessage } = useContext(AuthContext);
 
   return (
-    <View style={styles.container}>
-      <NavigationEvents
-        onWillFocus={clearErrorMessage}
-      />
+    <SafeAreaView>
+      <View style={styles.container}>
+        <NavigationEvents
+          onWillFocus={clearErrorMessage}
+        />
 
-      <AuthForm
-        headerText="Sign Up for Tracker"
-        errorMessage={state.errorMessage}
-        submitButtonText="Sign Up"
-        onSubmit={signup}
-      />
-      <NavLink
-        routeName="Signin"
-        text="Already have an account? Sign in instead!"
-      />
-    </View>
+        <AuthForm
+          headerText="Sign Up for Tracker"
+          errorMessage={state.errorMessage}
+          submitButtonText="Sign Up"
+          onSubmit={signup}
+        />
+        <NavLink
+          routeName="Signin"
+          text="Already have an account? Sign in instead!"
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 

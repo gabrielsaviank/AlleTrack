@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import { SafeAreaView } from 'react-navigation';
 import { View, StyleSheet, Text } from 'react-native';
 import {NavigationEvents} from 'react-navigation';
 import AuthForm from '../components/AuthForm';
@@ -10,23 +11,25 @@ const SigninScreen = () => {
 
   //JSX
   return(
-    <View style={styles.container}>
-      <NavigationEvents
-        onWillFocus={clearErrorMessage}
-      />
-      <AuthForm
-        headerText="Sign In to Your Account"
-        errorMessage={state.errorMessage}
-        onSubmit={signin}
-        submitButtonText="Sign In"
-      />
+    <SafeAreaView forceInset={{top: 'always'}}>
+      <View style={styles.container}>
+        <NavigationEvents
+          onWillFocus={clearErrorMessage}
+        />
+        <AuthForm
+          headerText="Sign In to Your Account"
+          errorMessage={state.errorMessage}
+          onSubmit={signin}
+          submitButtonText="Sign In"
+        />
 
-      <NavLink 
-        text="Don't have an account? Sign Up Instead" 
-        routeName="Signup"
+        <NavLink 
+          text="Don't have an account? Sign Up Instead" 
+          routeName="Signup"
 
-      />
-    </View>
+        />
+      </View>
+    </SafeAreaView>
   )
 };
 
