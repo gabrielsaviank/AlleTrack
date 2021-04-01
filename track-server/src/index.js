@@ -10,11 +10,12 @@ const requireAuth = require('./middlewares/requireAuth');
 
 const app = express(); 
 
+// Router
 app.use(bodyParser.json())
 app.use(authRoutes);
 app.use(trackRoutes);
 
-//Mongo Setup 
+//Mongo Setup (I NEED TO HIDE THIS IMMEDIATLY)
 const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.vx10q.mongodb.net/<dbname>?retryWrites=true&w=majority'
 
 mongoose.connect(mongoUri, {
