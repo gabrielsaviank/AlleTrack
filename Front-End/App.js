@@ -9,9 +9,13 @@ import SignupScreen from './src/screens/SignupScreen';
 import TrackCreateScreen from './src/screens/TrackCreateScreen';
 import TrackDetailScreen from './src/screens/TrackDetailScreen';
 import TrackListScreen from './src/screens/TrackListScreen';
-import {Provider as AuthProvider} from './src/context/AuthContext';
 import {setNavigator} from './src/navigationRef';
 import ResolveAuthScreen from './src/screens/ResolveAuthScreen';
+
+//Redux Stuff 
+import {Provider as AuthProvider} from './src/context/AuthContext';
+import {Provider as LocationProvider} from './src/context/LocationContext';
+
 
 // Our Navigation
 const switchNavigator = createSwitchNavigator({
@@ -30,15 +34,19 @@ const switchNavigator = createSwitchNavigator({
   }),
 });
 
-// Ignore yellow box (NOT WORKING)
+// Ignore yellow box (DEPRECATED)
 console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
+
 const App = createAppContainer(switchNavigator);
 
 //Exporting with Authentication
 export default() => {
   return(
-    <AuthProvider>
-      <App ref={(navigator) => { setNavigator(navigator)}}/>
-    </AuthProvider>
+    <LocationProvider>
+      <AuthProvider>
+        <App ref={(navigator) => { setNavigator(navigator)}}/>
+      </AuthProvider>
+    </LocationProvider>
+
   );
 };
