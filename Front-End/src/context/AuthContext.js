@@ -1,19 +1,18 @@
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from "@react-native-community/async-storage";
 import createDataContext from './createDataContext';
 import trackerApi from '../api/tracker';
 import { navigate } from '../navigationRef';
 
 const authReducer = (state, action) => {
-  // REDUCER
   switch (action.type) {
-    case 'add_error':
+    case "add_error":
       return { ...state, errorMessage: action.payload };
-    case 'signin':
-      return {errorMessage: '', token: action.payload}
-    case 'clear_error_message':
-      return {...state, errorMessage: ''};
-    case 'signout': 
-      return{ token: null, errorMessage: '' }
+    case "signin":
+      return { errorMessage: "", token: action.payload };
+    case "clear_error_message":
+      return { ...state, errorMessage: "" };
+    case "signout":
+      return { token: null, errorMessage: "" };
     default:
       return state;
   }
@@ -82,10 +81,10 @@ const signin = dispatch => async({ email, password }) => {
 
 
 // Destroy Session
-const signout = dispatch => async() => {
-  await AsyncStorage.removeItem('token')
-  dispatch({type: 'signout'});
-  navigate('loginFlow');
+const signout = (dispatch) => async () => {
+  await AsyncStorage.removeItem("token");
+  dispatch({ type: "signout" });
+  navigate("loginFlow");
 };
 
 

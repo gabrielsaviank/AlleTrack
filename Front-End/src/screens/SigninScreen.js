@@ -11,25 +11,22 @@ const SigninScreen = () => {
 
   //JSX
   return(
-    <SafeAreaView forceInset={{top: 'always'}}>
-      <View style={styles.container}>
-        <NavigationEvents
-          onWillFocus={clearErrorMessage}
-        />
-        <AuthForm
-          headerText="Sign In to Your Account"
-          errorMessage={state.errorMessage}
-          onSubmit={signin}
-          submitButtonText="Sign In"
-        />
+    <View style={styles.container}>
+      <NavigationEvents
+        onWillFocus={clearErrorMessage}
+      />
+      <AuthForm
+        headerText="Sign In to Your Account"
+        errorMessage={state.errorMessage}
+        onSubmit={signin}
+        submitButtonText="Sign In"
+      />
 
-        <NavLink 
-          text="Don't have an account? Sign Up Instead" 
-          routeName="Signup"
-
-        />
-      </View>
-    </SafeAreaView>
+      <NavLink 
+        text="Don't have an account? Sign Up Instead" 
+        routeName="Signup"
+      />
+    </View>
   )
 };
 

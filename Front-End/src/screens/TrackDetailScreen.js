@@ -5,7 +5,7 @@ import {SafeAreaView} from 'react-navigation'
 const TrackDetailScreen = () => {
   return (
     <SafeAreaView forceInset={{top: 'always'}}>
-      <Text style={{ fontSize: 48 }}>TrackDetailScreen</Text>;
+      <Text style={{ fontSize: 48 }}>TrackDetailScreen</Text>
     </SafeAreaView>
   )
 };
