@@ -1,36 +1,51 @@
+// All about tracking the users location and storing points
+
 import createDataContext from './createDataContext';
 
-//Reducer
 const locationReducer = (state, action) => {
-    switch (action.type) {
-      case 'add_current_location':
-        return { ...state, currentLocation: action.payload };
-      default:
-        return state;
-    }
+  //Reducer
+  switch (action.type) {
+    case 'add_current_location':
+      return { ...state, currentLocation: action.payload };
+    case 'start_recording':
+      return { ...state, recording: true };
+    case 'stop_recording':
+      return { ...state, recording: false };
+    case 'add_location':
+      return { ...state, locations: [...state.locations, action.payload] };
+    case 'change_name':
+      return { ...state, name: action.payload };
+    default:
+      return state;
+  }
 };
 
-//Record Location
-const startRecording = (dispatch) => () => {
+// Name our tracks 
+const changeName = dispatch => name => {
+  dispatch({ type: 'change_name', payload: name });
+};
 
+// Initiate our record
+const startRecording = dispatch => () => {
+  dispatch({ type: 'start_recording' });
+};
+
+// Stop our action
+const stopRecording = dispatch => () => {
+  dispatch({ type: 'stop_recording' });
+};
+
+// Creates the points of our location (this is our core)
+const addLocation = dispatch => (location, recording) => {
+  dispatch({ type: 'add_current_location', payload: location });
+  if (recording) {
+    dispatch({ type: 'add_location', payload: location });
+  }
 };
 
 
-//Stop Recording Location
-const stopRecording = (dispatch) => () => {
-
-};
-
-
-// Add Location 
-const addLocation = dispatch => location => {
-    dispatch({ type: 'add_current_location', payload: location });
-};
-
-
-//exporting 
 export const { Context, Provider } = createDataContext(
-    locationReducer,
-    { startRecording, stopRecording, addLocation },
-    { recording: false, locations: [], currentLocation: null }
+  locationReducer,
+  { startRecording, stopRecording, addLocation, changeName },
+  { name: '', recording: false, locations: [], currentLocation: null }
 );

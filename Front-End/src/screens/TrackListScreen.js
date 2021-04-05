@@ -5,7 +5,7 @@ import {SafeAreaView} from 'react-navigation';
 const TrackListScreen = ({navigation}) => {
   return (
     <View>
-      <Text style={{fontSize: 48}}>Track List Screen</Text>
+      <Text style={{fontSize: 48}}>My Tacks</Text>
       
       <Button 
         title="Go to track detail"
