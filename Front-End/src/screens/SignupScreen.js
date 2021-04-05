@@ -11,25 +11,25 @@ import { SafeAreaView } from 'react-navigation';
 const SignupScreen = ({ navigation }) => {
   const { state, signup, clearErrorMessage } = useContext(AuthContext);
 
-  return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <NavigationEvents
-          onWillFocus={clearErrorMessage}
-        />
+  console.log("heeereee")
 
-        <AuthForm
-          headerText="Sign Up for Tracker"
-          errorMessage={state.errorMessage}
-          submitButtonText="Sign Up"
-          onSubmit={signup}
-        />
-        <NavLink
-          routeName="Signin"
-          text="Already have an account? Sign in instead!"
-        />
-      </View>
-    </SafeAreaView>
+  return (
+      <View style={styles.container}>
+      <NavigationEvents
+        onWillFocus={clearErrorMessage}
+      />
+
+      <AuthForm
+        headerText="Sign Up for Tracker"
+        errorMessage={state.errorMessage}
+        submitButtonText="Sign Up"
+        onSubmit={signup}
+      />
+      <NavLink
+        routeName="Signin"
+        text="Already have an account? Sign in instead!"
+      />
+    </View>
   );
 };
 

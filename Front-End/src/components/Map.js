@@ -15,8 +15,8 @@ const Map = () => {
 
 
   var initialLocation = {
-    longitude: -122.0312186,
-    latitude: 37.33233141,
+    longitude: -48.8742395,
+    latitude: -26.3320779,
   };
   return (
     <MapView

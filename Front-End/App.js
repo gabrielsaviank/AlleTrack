@@ -21,7 +21,7 @@ import {Provider as TrackProvider} from './src/context/TrackContext';
 
 // Our Navigation
 const switchNavigator = createSwitchNavigator({
-  ResolveAuth : ResolveAuthScreen,
+  ResolveAuth: ResolveAuthScreen,
   loginFlow: createStackNavigator({
     Signup: SignupScreen,
     Signin: SigninScreen,
@@ -35,22 +35,23 @@ const switchNavigator = createSwitchNavigator({
     Account: AccountScreen,
   }),
 });
-
 // Ignore yellow box (DEPRECATED)
 console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
 
 const App = createAppContainer(switchNavigator);
 
-//Exporting with Authentication
-export default() => {
-  return(
+export default () => {
+  return (
     <TrackProvider>
       <LocationProvider>
         <AuthProvider>
-          <App ref={(navigator) => { setNavigator(navigator)}}/>
+          <App
+            ref={(navigator) => {
+              setNavigator(navigator);
+            }}
+          />
         </AuthProvider>
       </LocationProvider>
     </TrackProvider>
-
   );
 };

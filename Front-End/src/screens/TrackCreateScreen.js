@@ -1,6 +1,6 @@
 import '../_mockLocation';
 import React, { useContext, useCallback } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ImageBackground, Button, View } from 'react-native';
 import { Text } from 'react-native-elements';
 import { SafeAreaView, withNavigationFocus } from 'react-navigation';
 import Map from '../components/Map';
@@ -23,14 +23,26 @@ const TrackCreateScreen = ({ isFocused }) => {
 
   return (
     <SafeAreaView forceInset={{ top: 'always' }}>
-      <Text h2>Create a Track</Text>
-      <Map />
-      {err ? <Text>Please enable location services</Text> : null}
-      <TrackForm />
+      <ImageBackground source={require('../backgrounds/electrWaterBackground.png')}style={styles.background}>
+        <Text h2>Create a Track</Text>
+        <Map />
+        {err ? <Text>Please enable location services</Text> : null}
+        <TrackForm />
+      </ImageBackground>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  background: {
+    height: 800, 
+    width: 400
+  }, 
+  container: {
+    backgroundColor: 'grey',
+    height: 65, 
+    top: 640
+  }
+});
 
 export default withNavigationFocus(TrackCreateScreen);
