@@ -1,6 +1,6 @@
 import '../_mockLocation';
 import React, { useContext, useCallback } from 'react';
-import { StyleSheet, ImageBackground, Text, Button, View } from 'react-native';
+import { StyleSheet, ImageBackground, Button, View } from 'react-native';
 import { Text } from 'react-native-elements';
 import { SafeAreaView, withNavigationFocus } from 'react-navigation';
 import Map from '../components/Map';

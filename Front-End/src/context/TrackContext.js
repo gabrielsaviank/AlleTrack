@@ -15,10 +15,17 @@ const trackReducer = (state, action) => {
 };
 
 //Get Our Tracks 
-const fetchTracks = dispatch => async() => {
-    const response = await trackerApi.get('/tracks', {name, locations});
+
+const fetchTracks = dispatch => async(name, locations) => {
+    const response = await trackerApi.get('/tracks', {name, locations}); 
     dispatch ({type: 'fetch_tracks', payload: response.data});
-};
+}
+console.log(fetchTracks)
+// const fetchTracks = dispatch => async() => {
+//     const response = await trackerApi.get('/tracks', {name, locations});
+//     dispatch ({type: 'fetch_tracks', payload: response.data});
+//     console.log(response)
+// };
 
 const createTrack = dispatch => async(name, locations) => {
     await trackerApi.post('/tracks', {name, locations});

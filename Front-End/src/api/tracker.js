@@ -3,7 +3,7 @@ import axios from 'axios';
 import AsyncStorage from "@react-native-community/async-storage";
 
 const instance =  axios.create({
-    baseURL: 'http://454cf1e07924.ngrok.io'
+    baseURL: 'http://ac9afaa9f630.ngrok.io'
 });
 
 // After 1:30 hours the Ngrok expire and it's necessary to restart the server again
