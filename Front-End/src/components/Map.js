@@ -17,8 +17,8 @@ const Map = () => {
 
 
   var initialLocation = {
-    longitude: -48.8742395,
-    latitude: -26.3320779,
+    longitude: -52.6161812,
+    latitude: -27.0782156,
   };
 
   return (
@@ -33,8 +33,8 @@ const Map = () => {
       <Circle
         center={currentLocation.coords}
         radius={30}
-        strokeColor="rgba(158, 158, 255, 1.0)"
-        fillColor="rgba(158, 158, 255, 0.3)"
+        strokeColor="rgba(227, 57, 0, 1.0)"
+        fillColor="rgba(227, 57, 0, 0.3)"
       />
 
       <Polyline coordinates={locations.map(loc => loc.coords)}/>

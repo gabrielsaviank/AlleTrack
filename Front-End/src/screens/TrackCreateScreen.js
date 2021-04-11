@@ -1,4 +1,4 @@
-import '../_mockLocation';
+// import '../_mockLocation';
 import React, { useContext, useCallback } from 'react';
 import { StyleSheet, ImageBackground, Button, View } from 'react-native';
 import { Text } from 'react-native-elements';
@@ -7,6 +7,7 @@ import Map from '../components/Map';
 import { Context as LocationContext } from '../context/LocationContext';
 import useLocation from '../hooks/useLocation';
 import TrackForm from '../components/TrackForm';
+import {FontAwesome} from '@expo/vector-icons';
 
 const TrackCreateScreen = ({ isFocused }) => {
   // Each time location changes we add a new Location with a new object
@@ -36,6 +37,11 @@ const TrackCreateScreen = ({ isFocused }) => {
       </ImageBackground>
     </SafeAreaView>
   );
+};
+
+TrackCreateScreen.navigationOptions = {
+  title: 'Add Track',
+  tabBarIcon: <FontAwesome name='plus' size={20}/>
 };
 
 const styles = StyleSheet.create({

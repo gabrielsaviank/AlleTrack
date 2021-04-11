@@ -17,7 +17,7 @@ const TrackListScreen = ({navigation}) => {
   return (
     <View>
     <NavigationEvents onWillFocus={fetchTracks}/>
-      <Text style={{fontSize: 48}}>My Tracks</Text>
+      <Text style={{fontSize: 48}}>Your Tracks: </Text>
 
       <FlatList
         data={state}
@@ -37,6 +37,10 @@ const TrackListScreen = ({navigation}) => {
   )
 };
 console.disableYellowBox = true;
+
+TrackListScreen.navigationOptions = {
+  title: 'Tracks'
+}
 
 
 const styles = StyleSheet.create({});

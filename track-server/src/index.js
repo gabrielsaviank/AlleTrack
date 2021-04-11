@@ -7,7 +7,7 @@ const authRoutes = require('../src/routes/authRoutes');
 const bodyParser = require('body-parser');
 const trackRoutes = require('./routes/trackRoutes');
 const requireAuth = require('./middlewares/requireAuth');
-
+const password = require('../secrets')
 const app = express(); 
 
 // Router
@@ -16,7 +16,8 @@ app.use(authRoutes);
 app.use(trackRoutes);
 
 //Mongo Setup (I NEED TO HIDE THIS IMMEDIATLY)
-const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.vx10q.mongodb.net/<dbname>?retryWrites=true&w=majority'
+// const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.vx10q.mongodb.net/<dbname>?retryWrites=true&w=majority';
+const mongoUri = `mongodb+srv://admin:${password}@cluster0.vx10q.mongodb.net/<dbname>?retryWrites=true&w=majority`;
 
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
