@@ -16,7 +16,7 @@ app.use(authRoutes);
 app.use(trackRoutes);
 
 //Mongo Setup (I NEED TO HIDE THIS IMMEDIATLY)
-const mongoUri = ''
+const mongoUri = 'mongodb+srv://admin:7758773S@cluster0.vx10q.mongodb.net/<dbname>?retryWrites=true&w=majority'
 
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
