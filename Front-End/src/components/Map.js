@@ -4,11 +4,13 @@ import MapView, { Polyline, Circle } from "react-native-maps";
 import { Context as LocationContext } from "../context/LocationContext";
 
 const Map = () => {
+  // Here we call our current locations (the pointer)
   const {
     state: { currentLocation, locations },
   } = useContext(LocationContext);
 
 
+  // If the currentLocation is null don't show anything (Activity === spinner)
   if (!currentLocation) {
     return <ActivityIndicator size="large" style={{ marginTop: 200 }} />;
   };
@@ -18,6 +20,7 @@ const Map = () => {
     longitude: -48.8742395,
     latitude: -26.3320779,
   };
+
   return (
     <MapView
       style={styles.map}

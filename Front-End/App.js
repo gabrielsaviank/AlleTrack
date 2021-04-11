@@ -40,6 +40,7 @@ console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
 
 const App = createAppContainer(switchNavigator);
 
+// The context stuff is based on hierarchy
 export default () => {
   return (
     <TrackProvider>
@@ -55,3 +56,4 @@ export default () => {
     </TrackProvider>
   );
 };
+

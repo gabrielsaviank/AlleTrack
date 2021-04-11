@@ -7,7 +7,7 @@ import  {navigate} from '../navigationRef';
 
 
 
-//Pulling some information rom our location, we're going to pull the action  from track context and throw to location context
+//Pulling some information from our location, we're going to pull the action  from track context and throw to location context
 export default () => {
     const { createTrack } = useContext(TrackContext);
     const {

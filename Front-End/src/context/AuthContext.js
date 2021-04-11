@@ -3,7 +3,9 @@ import createDataContext from './createDataContext';
 import trackerApi from '../api/tracker';
 import { navigate } from '../navigationRef';
 
+// Reducer
 const authReducer = (state, action) => {
+  //reducer 
   switch (action.type) {
     case "add_error":
       return { ...state, errorMessage: action.payload };
@@ -18,6 +20,7 @@ const authReducer = (state, action) => {
   }
 };
 
+// Actions that will modify our state
 const tryLocalSignin = (dispatch) => async() => {
   //====>Getting Token From AsyncStorage<====/
   const token = await AsyncStorage.getItem('token');

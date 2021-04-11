@@ -70,7 +70,7 @@ _Navigate to FrontEnd and run the command expo start_
 * More Styling and better layouts.
 * More Settings (What? Don't know yet).
 * Pictures? Like Strava? (Multer {BackEnd} and React Native Image Picker {FrontEnd}, Already done in other apps).
-* Graphs! (Mongo Pipeline Aggregations to separate de periods and use Victory Native for the Grapgs, or I could be ambitious and dissect SVG)
+* Graphs! (Mongo Pipeline Aggregations to separate the periods and use Victory Native for the Grapgs, or I could be ambitious and dissect SVG)
 
 #### New Knowledges? 
 

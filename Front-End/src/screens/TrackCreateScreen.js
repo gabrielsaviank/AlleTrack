@@ -9,16 +9,21 @@ import useLocation from '../hooks/useLocation';
 import TrackForm from '../components/TrackForm';
 
 const TrackCreateScreen = ({ isFocused }) => {
+  // Each time location changes we add a new Location with a new object
   const {
     state: { recording },
     addLocation
   } = useContext(LocationContext);
+
+  // Here we have our hook previously mentioned in useLocation, locations will only work with recording
   const callback = useCallback(
     location => {
       addLocation(location, recording);
     },
     [recording]
   );
+
+  // Here we have our hook error if not we have our callback
   const [err] = useLocation(isFocused || recording, callback);
 
   return (

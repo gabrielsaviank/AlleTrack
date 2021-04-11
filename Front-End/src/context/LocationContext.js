@@ -22,17 +22,17 @@ const locationReducer = (state, action) => {
   }
 };
 
-// Name our tracks 
+// Dispatch an action to name our track
 const changeName = dispatch => name => {
   dispatch({ type: 'change_name', payload: name });
 };
 
-// Initiate our record
+// Dispatch an action to start recording our activity (will record and fill our array of locations)
 const startRecording = dispatch => () => {
   dispatch({ type: 'start_recording' });
 };
 
-// Stop our action
+// Dispatch an action to stop recording (filling our array with locations)
 const stopRecording = dispatch => () => {
   dispatch({ type: 'stop_recording' });
 };
@@ -54,5 +54,6 @@ const reset = dispatch => () => {
 export const { Context, Provider } = createDataContext(
   locationReducer,
   { startRecording, stopRecording, addLocation, changeName, reset },
+  // Initial state 
   { name: '', recording: false, locations: [], currentLocation: null }
 );

@@ -16,10 +16,10 @@ router.use(requireAuth);
 
 // Fetching different tracks
 router.get('/tracks', async (req, res) => {
+
     const tracks = await Track.find({ userId: req.user._id});
 
     res.send(tracks); 
-
 });
 
 //Posting Tracks

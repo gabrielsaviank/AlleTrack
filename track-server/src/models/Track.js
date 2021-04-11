@@ -11,6 +11,8 @@ const pointSchema = new mongoose.Schema({
         speed: Number
     }
 });
+
+
 const trackSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId, 
